@@ -10,7 +10,8 @@ import {TaskService} from "../../shared/services/task.service";
 export class HomeComponent implements OnInit {
 
   tasks: Task[];
-  viewList: boolean
+  viewList: boolean;
+  actionVisible: boolean;
 
   constructor(private taskService: TaskService) { }
 
@@ -30,6 +31,12 @@ export class HomeComponent implements OnInit {
     this.viewList = false;
   }
   onAction(){
+    this.actionVisible = true;
+  }
+  onEdit() {
+
+  }
+  onRemove(){
 
   }
 

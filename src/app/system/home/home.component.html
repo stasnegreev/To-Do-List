@@ -69,6 +69,23 @@
                         (click)="onAction()"
                     >
                         <img src="../../assets/images/icons/ellipsis.svg">
+                        <div
+                            class="action_menu"
+                            *ngIf="actionVisible"
+                        >
+                            <div
+                                class="editTask"
+                                (click)="onEdit()"
+                            >
+                                Edit
+                            </div>
+                            <div
+                                class="removeTask"
+                                (click)="onRemove()"
+                            >
+                                Remove
+                            </div>
+                        </div>
                     </div>
                 </div>
             </li>
