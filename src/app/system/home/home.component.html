@@ -1,0 +1,117 @@
+<<div class="home">
+    <div class="view">
+        <div
+            class="view_icon"
+            *ngIf="viewList === true"
+            (click)="onViewGrid()"
+        >
+            <img src="../../assets/images/icons/list.svg">
+        </div>
+        <div
+            class="view_icon"
+            *ngIf="viewList === false"
+            (click)="onViewList()"
+        >
+            <img src="../../assets/images/icons/grid.svg">
+        </div>
+
+    </div>
+    <div class="toDo">
+        <h2>
+            To Do <span>(4)</span>
+        </h2>
+        <ul
+            class="list"
+        >
+            <li
+                class="iteam"
+                [ngClass]="{'grid_style': !viewList}"
+                *ngFor="let t of tasks"
+            >
+                <div class="iteam__icon">
+                    <div>
+                        <span>L</span>
+                    </div>
+                </div>
+                <div class="iteam__content">
+                    <div class="iteam__info">
+                        <div
+                                class="iteam__priority"
+                                *ngIf="t.priority === 'hight'"
+                        >
+                            <img src="../../assets/images/icons/up-arrow.svg">
+                            <span>Hight Priority</span>
+                        </div>
+                        <div
+                                class="iteam__priority"
+                                *ngIf="t.priority === 'low'"
+                        >
+                            <img src="../../assets/images/icons/arrow-down.svg">
+                            <span>Low Priority</span>
+                        </div>
+                        <div
+                                class="iteam__date"
+                                *ngIf="t.data !== ''"
+                        >
+                            <img src="../../assets/images/icons/clock.svg">
+                            <span>{{t.data | date:"d MMM y h:mm"}}</span>
+                        </div>
+                    </div>
+                    <h3>
+                        Lorem ipsum
+                    </h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium, ad delectus deleniti
+                        excepturi inventore ipsa labore modi omnis quaerat quia, velit? Architecto excepturi ipsam
+                    </p>
+                    <div
+                        class="action"
+                        (click)="onAction()"
+                    >
+                        <img src="../../assets/images/icons/ellipsis.svg">
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+
+    <!--
+    <div class="toDo">
+    <h2>
+        Comleted <span>(3)</span>
+    </h2>
+    <ul class="list">
+        <li class="iteam ">
+            <div class="iteam__info">
+                <div class="iteam__priority">
+                    <img src="../../assets/images/icons/up-arrow.svg">
+                    <span>Hight Priority</span>
+                </div>
+                <div class="iteam__priority">
+                    <img src="../../assets/images/icons/arrow-down.svg">
+                    <span>Low Priority</span>
+                </div>
+                <div class="iteam__date">
+                    <img src="../../assets/images/icons/clock.svg">
+                    <span>data</span>
+                </div>
+            </div>
+            <div class="iteam__icon">
+                <div>
+                    <span>L</span>
+                </div>
+            </div>
+            <div class="iteam__content">
+                <h3>
+                    Lorem ipsum
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium, ad delectus deleniti
+                    excepturi inventore ipsa labore modi omnis quaerat quia, velit? Architecto excepturi ipsam
+                </p>
+            </div>
+        </li>
+    </ul>
+</div>
+    -->
+</div>

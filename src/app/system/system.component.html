@@ -1,0 +1,84 @@
+
+<div class="system_window">
+    <div class="sideBar">
+      <aside >
+        <div class="button button_menu">
+          <div class="chevron active">
+            <img src="../../assets/images/icons/left-chevron.svg">
+          </div>
+          <div class="chevron ">
+            <img src="../../assets/images/icons/right-chevron.svg">
+          </div>
+          <img src="../../assets/images/icons/menu-button.svg">
+        </div>
+        <div class="side__header">
+          <div class="side__logo">
+            <!--<img src="../../assets/images/logo.svg">-->
+          </div>
+          <h1>ToDo</h1>
+        </div>
+        <div class="side_section">
+          <ul class="side_menu">
+            <li class="side_menu__iteam " routerLinkActive="active">
+              <div class="side_menu__iteam__icon">
+                <img src="../../assets/images/icons/home.svg">
+              </div>
+              <a [routerLink]="['/home']">Home</a>
+            </li>
+            <li class="side_menu__iteam" routerLinkActive="active">
+              <div class="side_menu__iteam__icon">
+                <img src="../../assets/images/icons/settings.svg">
+              </div>
+              <a [routerLink]="['/setting']">Setting</a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+    <div class="content">
+          <header>
+            <div class="header">
+              <div class="button button_filter">
+                <img src="../../assets/images/icons/filter-button.svg">
+              </div>
+              <div class="button button_sorting">
+                <img src="../../assets/images/icons/sorting-button.svg">
+              </div>
+              <div class="button button_add">
+                <div class="btn btn-primary" (click)="openTaskCreater()">
+                  + Add ToDo
+                </div>
+              </div>
+              <div class="button button_profile">
+                <div class="ava">
+                  <img src="https://img.freepik.com/free-photo/_53876-40306.jpg?size=626&ext=jpg">
+                </div>
+                <div class="chevron active">
+                  <img src="../../assets/images/icons/down-chevron.svg">
+                </div>
+                <div class="chevron">
+                  <img src="../../assets/images/icons/up-chevron.svg">
+                </div>
+              </div>
+            </div>
+          </header>
+          <aside
+            >
+            <tdl-creater
+              *ngIf="isCreaterVisible"
+              (onCreaterCancel)="closeTaskCreater()"
+              (onTaskAdd)=""
+            ></tdl-creater>
+          </aside>
+          <section>
+              <router-outlet
+
+              ></router-outlet>
+          </section>
+    </div>
+</div>
+
+
+
+
+

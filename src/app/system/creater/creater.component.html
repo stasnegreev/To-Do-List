@@ -1,0 +1,89 @@
+<div class="modal fade in">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">New task</h4>
+                <button type="button" class="close" (click)="closeCreater()">
+                    <span>×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div
+                        class="alert alert-{{massage.type}}"
+                        *ngIf="massage.text"
+                >
+                    {{massage.text}}
+                </div>
+                <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                    <div class="form-group"
+                         [ngClass]="{'has-error': name.invalid && name.touched}"
+                    >
+                        <label class="control-label" for="name">Add name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            class="form-control"
+                            name="name"
+                            [ngModel]=""
+                            #name="ngModel"
+                            maxlength="25"
+                            required
+                        >
+                        <span
+                                class="form-help-text"
+                                *ngIf="name.invalid && name.touched"
+                        >
+                          Name is required
+                        </span>
+                    </div>
+                    <div class="form-group"
+                         [ngClass]="{'has-error': description.invalid && description.touched}"
+                    >
+                        <label class="control-label" for="description">Add description</label>
+                        <input
+                            type="text"
+                            id="description"
+                            class="form-control"
+                            name="description"
+                            [ngModel]=""
+                            #description="ngModel"
+                            maxlength="225"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Select priority</label>
+                        <div *ngFor="let t of types">
+                            <label>
+                                <input
+                                    class="radio"
+                                    name="priority"
+                                    type="radio"
+                                    [value]="t.type"
+                                    [ngModel]=""
+                                >
+                                <span>{{t.label}}</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                                type="button"
+                                class="btn btn-secondary"
+                        >
+                            Cancel
+                        </button>
+                        <button
+                                class="btn btn-primary"
+                                type="submit"
+                                [disabled]="f.invalid"
+                        >
+                            Create
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+

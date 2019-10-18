@@ -1,0 +1,131 @@
+.home{
+  background-color: #f6f7fa;
+  padding: 40px;
+  position: relative;
+  .view{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    .view_icon{
+      img{
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  .toDo{
+    h2{
+      display: inline-block;
+      margin-top: 10px;
+      color: #000000;
+      span{
+        color: #8693b0;
+      }
+    }
+    .list{
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+
+      .iteam{
+        background-color: #ffffff;
+        height: 120px;
+        padding: 15px;
+        padding-right: 30px;
+        display: flex;
+        border: #f6f7fa solid 2px;
+        position: relative;
+
+        .iteam__icon{
+          padding: 15px;
+          div{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: #5584ff;
+            display: flex;
+            justify-content: center;
+
+            span{
+              padding-top: 2px;
+              color: white;
+              font-size: 26px;
+              vertical-align: center;
+            }
+          }
+        }
+        .iteam__content{
+          .iteam__info{
+             display: flex;
+            justify-content: flex-end;
+            .iteam__priority{
+              display: flex;
+              align-content: center;
+              img{
+                margin: 3px;
+                width: 10px;
+                height: 10px;
+              }
+              span{
+                font-size: 10px;
+                color: black;
+                font-weight: bold;
+              }
+            }
+            .iteam__date{
+              display: flex;
+              align-content: center;
+
+              img{
+                margin: 3px;
+                width: 10px;
+                height: 10px;
+
+              }
+              span{
+
+                font-size: 10px;
+                color: #aeb8ca;
+              }
+            }
+          }
+          h3{
+            font-size: 20px;
+            margin-top: 5px;
+          }
+          p{
+            height: 40px;
+            font-size: 14px;
+            color: #4f5f6f;
+            overflow: hidden;
+
+          }
+          .action{
+            padding: 7px;
+            position: absolute;
+            top: 50px;
+            right: 5px;
+            img{
+              height: 20px;
+            }
+          }
+        }
+      }
+      .grid_style{
+        flex-direction: column;
+        align-items: center;
+        width: 200px;
+        height: 220px;
+        .iteam__info{
+          min-height: 30px;
+        }
+      }
+    }
+  }
+}
+
+.toDo__list {
+  padding: 0;
+}
+

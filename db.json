@@ -1,0 +1,110 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "wfm@mail.ru",
+      "password": "12345678",
+      "name": "Администратор"
+    },
+    {
+      "email": "q@w.e",
+      "password": "qwqwqw",
+      "name": "qwqwqw",
+      "id": 2
+    },
+    {
+      "email": "q@w.efgrh5",
+      "password": "qwqwqw554",
+      "name": "qwqwqw112",
+      "id": 3
+    },
+    {
+      "email": "q443@w.e",
+      "password": "qwqwqw423",
+      "name": "qwqwqwqq",
+      "id": 4
+    }
+  ],
+  "bill": {
+    "value": 26205,
+    "currency": "RUB"
+  },
+  "currencyEx": [
+    {
+      "base": "RUB",
+      "date": "18/10/2019",
+      "rates": {
+        "USD": 0.5,
+        "EUR": 0.4
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "name": "dom2",
+      "description": "lorem*15asfgshgdshdfggdshg  ",
+      "priority": "low",
+      "status": "during",
+      "data": "",
+      "id": 1
+    },
+    {
+      "name": "dom2",
+      "description": "lorem*15asfgshgdshdfggdshg  ",
+      "priority": "low",
+      "status": "during",
+      "data": "",
+      "id": 1
+    },
+    {
+      "name": "hit",
+      "description": "lorem*15fdgbxfczvasfgshgdshdfggdshg  ",
+      "priority": "hight",
+      "status": "done",
+      "data": "",
+      "id": 1
+    },
+    {
+      "name": "вапролдж",
+      "description": "вапролд",
+      "priority": "medium",
+      "status": "during",
+      "data": "2019-10-18T09:11:35.663Z",
+      "id": 2
+    },
+    {
+      "name": "Дом",
+      "description": null,
+      "priority": null,
+      "status": "during",
+      "data": "2019-10-18T12:59:29.526Z",
+      "id": 3
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "type": "income",
+      "amount": 5025,
+      "category": 1,
+      "date": "12.09.2019 19:49:02",
+      "description": "Подарили еду в гостях"
+    },
+    {
+      "id": 2,
+      "type": "outcome",
+      "amount": 630,
+      "category": 2,
+      "date": "27.09.2019 19:49:02",
+      "description": "Купил посудомоечную машину"
+    },
+    {
+      "type": "outcome",
+      "amount": 11480,
+      "category": 3,
+      "date": "22.09.2019 14:00:48",
+      "id": 3,
+      "description": "Поход в окей с баллами. Бесплатная еда"
+    }
+  ]
+}
