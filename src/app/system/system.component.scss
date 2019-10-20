@@ -55,9 +55,10 @@ table {
   .sideBar {
     position: relative;
     min-width: 200px;
-    height: 100%;
     background-color: #0e1a35;
     color: white;
+    aside{
+    }
     .button_menu {
       position: absolute;
       top: 15px;
@@ -102,6 +103,7 @@ table {
       margin-bottom: 20px;
     }
     .side_section {
+      height: 100%;
       .side_menu {
 
         .side_menu__iteam {
@@ -131,56 +133,11 @@ table {
     }
   }
   .content{
+    background-color: #f6f7fa;
     flex-basis: 100%;
-    .header{
-      display: flex;
-      justify-content: flex-end;
-      align-items: flex-start;
-      margin: 0 20px 10px 60px;
-      .button{
-        margin: 15px 5px;
-        padding: 10px;
-        position: relative;
-        img{
-          height: 30px;
-        }
-      }
-      .button_filter{
-      }
-      .button_sorting{
-
-      }
-      .button_add{
-        .btn{
-          width: 77px;
-          padding: 6px;
-          font-size: 12px;
-        }
-      }
-      .button_profile{
-        position: relative;
-        .ava{
-          img{
-            border-radius: 50%;
-            width: 30px;
-          }
-        }
-        .chevron{
-          display: none;
-          position: absolute;
-          top: 20px;
-          left: 48px;
-          img {
-            width: 9px;
-            height: 9px;
-          }
-        }
-        .active{
-          display: block;
-        }
-      }
-    }
+    height: 100%;
     section {
+      height: 100%;
     }
   }
 }

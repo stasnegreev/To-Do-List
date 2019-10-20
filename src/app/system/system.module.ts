@@ -6,15 +6,17 @@ import { SystemComponent } from './system.component';
 import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { SettingsComponent } from './settings/settings.component';
-import { CreaterComponent } from './creater/creater.component';
+import { CreaterComponent } from './home/creater/creater.component';
 import {TaskService} from "../shared/services/task.service";
+import { EditorComponent } from './home/editor/editor.component';
 
 @NgModule({
   declarations: [
     SystemComponent,
     HomeComponent,
     SettingsComponent,
-    CreaterComponent
+    EditorComponent,
+    CreaterComponent,
   ],
   imports: [
     CommonModule,

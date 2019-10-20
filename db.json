@@ -41,70 +41,84 @@
   ],
   "tasks": [
     {
-      "name": "dom2",
-      "description": "lorem*15asfgshgdshdfggdshg  ",
-      "priority": "low",
-      "status": "during",
-      "data": "",
-      "id": 1
-    },
-    {
-      "name": "dom2",
-      "description": "lorem*15asfgshgdshdfggdshg  ",
-      "priority": "low",
-      "status": "during",
-      "data": "",
-      "id": 1
-    },
-    {
-      "name": "hit",
-      "description": "lorem*15fdgbxfczvasfgshgdshdfggdshg  ",
-      "priority": "hight",
-      "status": "done",
-      "data": "",
-      "id": 1
-    },
-    {
-      "name": "вапролдж",
-      "description": "вапролд",
+      "name": "Купить молоко",
+      "description": "Сходить в магазин и купить не жирное молоко для блинчиков",
       "priority": "medium",
       "status": "during",
       "data": "2019-10-18T09:11:35.663Z",
       "id": 2
     },
     {
-      "name": "Дом",
+      "name": "Lern Angular",
+      "description": null,
+      "priority": "hight",
+      "status": "done",
+      "data": "2019-10-18T15:29:21.861Z",
+      "id": 14
+    },
+    {
+      "name": "sdafh",
       "description": null,
       "priority": null,
       "status": "during",
-      "data": "2019-10-18T12:59:29.526Z",
-      "id": 3
-    }
-  ],
-  "events": [
-    {
-      "id": 1,
-      "type": "income",
-      "amount": 5025,
-      "category": 1,
-      "date": "12.09.2019 19:49:02",
-      "description": "Подарили еду в гостях"
+      "data": "2019-10-19T12:41:05.154Z",
+      "id": 18
     },
     {
-      "id": 2,
-      "type": "outcome",
-      "amount": 630,
-      "category": 2,
-      "date": "27.09.2019 19:49:02",
-      "description": "Купил посудомоечную машину"
+      "name": "sdafsfb",
+      "description": null,
+      "priority": null,
+      "status": "during",
+      "data": "2019-10-19T13:22:32.034Z",
+      "id": 20
     },
     {
-      "type": "outcome",
-      "amount": 11480,
-      "category": 3,
-      "date": "22.09.2019 14:00:48",
-      "id": 3,
-      "description": "Поход в окей с баллами. Бесплатная еда"
+      "name": "do home work",
+      "description": "exe 134 exe 234",
+      "priority": "hight",
+      "status": "done",
+      "data": "2019-10-19T13:25:06.577Z",
+      "id": 22
+    },
+    {
+      "name": "take yor time",
+      "description": "lorem*15asfgshgdshdfggdshg  ",
+      "priority": "low",
+      "status": "during",
+      "data": "2019-10-19T13:31:48.152Z",
+      "id": 23
+    },
+    {
+      "name": "Дом2",
+      "description": null,
+      "priority": "hight",
+      "status": "during",
+      "data": "2019-10-19T22:56:46.178Z",
+      "id": 24
+    },
+    {
+      "name": "1adgfbngfhad",
+      "description": null,
+      "priority": "hight",
+      "status": "done",
+      "data": "2019-10-19T23:01:42.693Z",
+      "id": 25
+    },
+    {
+      "name": "аыфвапафвп",
+      "description": null,
+      "priority": "medium",
+      "status": "during",
+      "data": "2019-10-19T23:01:50.052Z",
+      "id": 26
+    },
+    {
+      "name": "ваымыа",
+      "description": null,
+      "priority": "medium",
+      "status": "during",
+      "data": "2019-10-19T23:02:33.821Z",
+      "id": 27
     }
   ]
 }

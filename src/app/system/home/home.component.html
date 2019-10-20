@@ -1,4 +1,95 @@
-<<div class="home">
+<header>
+    <div class="header">
+
+        <div class="dropdown button button_filter" >
+            <div class="dropdown-toggle"  id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="../../assets/images/icons/filter-button.svg">
+            </div>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu">
+                <form #f="ngForm" (ngSubmit)="filterAdded(f)">
+                    <div class="form-group ">
+                        <label class="control-label">Select priority</label>
+                        <div *ngFor="let p of prioritys" >
+                            <label class="dropdown-item">
+                                <input
+                                        class="form-check-input"
+                                        [name]="p.type"
+                                        type="checkbox"
+                                        [value]="p.type"
+                                        [ngModel]=""
+                                >
+                                <span>{{p.label}}</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                                data-toggle="dropdown"
+                            class="btn btn-primary"
+                            type="submit"
+                        >
+                            Filter
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="button button_sorting">
+            <div class="dropdown">
+                <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="../../assets/images/icons/sorting-button.svg">
+                </div>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <span class="dropdown-item" (click)="onSortDown()">From new to old</span>
+                    <span class="dropdown-item" (click)="onSortUp()">From old to new</span>
+                </div>
+            </div>
+        </div>
+        <div class="button button_add">
+            <div class="btn btn-primary" (click)="openTaskCreater()">
+                + Add ToDo
+            </div>
+        </div>
+        <div class="button button_profile">
+            <div class="dropdown">
+                <div class="dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="ava">
+                        <img src="https://img.freepik.com/free-photo/_53876-40306.jpg?size=626&ext=jpg">
+                    </div>
+                </div>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton2">
+                    <div class="dropdown-item" (click)="onLogOut()">Log out</div>
+                </div>
+            </div>
+            <div class="chevron active">
+                <img src="../../assets/images/icons/down-chevron.svg">
+            </div>
+            <div class="chevron" aria-labelledby="dropdownMenuButton2">
+                <img src="../../assets/images/icons/up-chevron.svg">
+            </div>
+        </div>
+    </div>
+</header>
+<aside>
+    <tdl-creater
+            *ngIf="isCreaterVisible"
+            (onTaskAdd)="taskAdded($event)"
+            (onCreaterCancel)="closeTaskCreater()"
+    ></tdl-creater>
+</aside>
+<aside>
+    <tdl-editor
+            *ngIf="isEditorVisible"
+            [editTask] ="editTask"
+            (onTaskEdit)="onTaskEdit($event)"
+            (onTaskRemoved)="onTaskRemoved($event)"
+            (onEditorCancel)="closeTaskEditor()"
+            (onTaskDone)="onTaskDone($event)"
+            (onTaskDuring)="onTaskDuring($event)"
+    ></tdl-editor>
+</aside>
+
+<div class="home">
     <div class="view">
         <div
             class="view_icon"
@@ -18,7 +109,7 @@
     </div>
     <div class="toDo">
         <h2>
-            To Do <span>(4)</span>
+            To Do <span>()</span>
         </h2>
         <ul
             class="list"
@@ -26,11 +117,12 @@
             <li
                 class="iteam"
                 [ngClass]="{'grid_style': !viewList}"
-                *ngFor="let t of tasks"
+                *ngFor="let t of duringTasks"
             >
+
                 <div class="iteam__icon">
                     <div>
-                        <span>L</span>
+                        <span>{{t.name[1].toUpperCase()}}</span>
                     </div>
                 </div>
                 <div class="iteam__content">
@@ -41,6 +133,12 @@
                         >
                             <img src="../../assets/images/icons/up-arrow.svg">
                             <span>Hight Priority</span>
+                        </div>
+                        <div
+                                class="iteam__priority"
+                                *ngIf="t.priority === 'medium'"
+                        >
+                            <span>- Medium Priority</span>
                         </div>
                         <div
                                 class="iteam__priority"
@@ -58,77 +156,88 @@
                         </div>
                     </div>
                     <h3>
-                        Lorem ipsum
+                        {{t.name}}
                     </h3>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium, ad delectus deleniti
-                        excepturi inventore ipsa labore modi omnis quaerat quia, velit? Architecto excepturi ipsam
+                        {{t.description}}
                     </p>
                     <div
                         class="action"
-                        (click)="onAction()"
+                        (click)="openEditor(t)"
                     >
                         <img src="../../assets/images/icons/ellipsis.svg">
-                        <div
-                            class="action_menu"
-                            *ngIf="actionVisible"
-                        >
-                            <div
-                                class="editTask"
-                                (click)="onEdit()"
-                            >
-                                Edit
-                            </div>
-                            <div
-                                class="removeTask"
-                                (click)="onRemove()"
-                            >
-                                Remove
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </li>
+
         </ul>
-
-
-    <!--
+    </div>
     <div class="toDo">
-    <h2>
-        Comleted <span>(3)</span>
-    </h2>
-    <ul class="list">
-        <li class="iteam ">
-            <div class="iteam__info">
-                <div class="iteam__priority">
-                    <img src="../../assets/images/icons/up-arrow.svg">
-                    <span>Hight Priority</span>
+        <h2>
+            Completed <span>()</span>
+        </h2>
+        <ul
+            class="list"
+        >
+            <li
+                    class="iteam"
+                    [ngClass]="{'grid_style': !viewList}"
+                    *ngFor="let t of doneTasks"
+
+            >
+
+                <div class="iteam__icon">
+                    <div>
+                        <span>{{t.name[0].toUpperCase()}}</span>
+                    </div>
                 </div>
-                <div class="iteam__priority">
-                    <img src="../../assets/images/icons/arrow-down.svg">
-                    <span>Low Priority</span>
+                <div class="iteam__content">
+                    <div class="iteam__info">
+                        <div
+                                class="iteam__priority"
+                                *ngIf="t.priority === 'hight'"
+                        >
+                            <img src="../../assets/images/icons/up-arrow.svg">
+                            <span>Hight Priority</span>
+                        </div>
+                        <div
+                                class="iteam__priority"
+                                *ngIf="t.priority === 'medium'"
+                        >
+                            <span>- Medium Priority</span>
+                        </div>
+                        <div
+                                class="iteam__priority"
+                                *ngIf="t.priority === 'low'"
+                        >
+                            <img src="../../assets/images/icons/arrow-down.svg">
+                            <span>Low Priority</span>
+                        </div>
+                        <div
+                                class="iteam__date"
+                                *ngIf="t.data !== ''"
+                        >
+                            <img src="../../assets/images/icons/clock.svg">
+                            <span>{{t.data | date:"d MMM y h:mm"}}</span>
+                        </div>
+                    </div>
+                    <h3>
+                        {{t.name}}
+                    </h3>
+                    <p>
+                        {{t.description}}
+                    </p>
+                    <div
+                            class="action"
+                            (click)="openEditor(t)"
+                    >
+                        <img src="../../assets/images/icons/ellipsis.svg">
+
+                    </div>
                 </div>
-                <div class="iteam__date">
-                    <img src="../../assets/images/icons/clock.svg">
-                    <span>data</span>
-                </div>
-            </div>
-            <div class="iteam__icon">
-                <div>
-                    <span>L</span>
-                </div>
-            </div>
-            <div class="iteam__content">
-                <h3>
-                    Lorem ipsum
-                </h3>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium, ad delectus deleniti
-                    excepturi inventore ipsa labore modi omnis quaerat quia, velit? Architecto excepturi ipsam
-                </p>
-            </div>
-        </li>
-    </ul>
-</div>
-    -->
+            </li>
+
+        </ul>
+    </div>
 </div>

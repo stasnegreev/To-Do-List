@@ -1,8 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Message} from "../../shared/module/message.model";
+import {Message} from "../../../shared/module/message.model";
 import {NgForm} from "@angular/forms";
-import {TaskService} from "../../shared/services/task.service";
-import {Task} from "../../shared/module/task.module";
+import {TaskService} from "../../../shared/services/task.service";
+import {Task} from "../../../shared/module/task.module";
 
 @Component({
   selector: 'tdl-creater',
@@ -32,13 +32,20 @@ export class CreaterComponent implements OnInit{
     this.onCreaterCancel.emit();
   }
   onSubmit(form: NgForm){
+    if (form.invalid) {
+      if(form.name) {
+        this.massage.showMessage('danger', 'Select priority')
+      } else{
+        this.massage.showMessage('danger', 'Enter task name')
+      }
+      return;
+    };
     console.log("form submit");
-    this.closeCreater();
     let {name, description, priority} = form.value;
     const task = new Task(name, description, priority, "during", new Date());
     this.taskService.addTask(task)
-        .subscribe( () => {
-          this.onTaskAdd.emit(task);
+        .subscribe( (t) => {
+          this.onTaskAdd.emit(t);
         })
   }
 }

@@ -9,8 +9,8 @@ import {TaskService} from "../shared/services/task.service";
   styleUrls: ['./system.component.scss']
 })
 export class SystemComponent implements OnInit {
-  tasks: Task[];
-  isCreaterVisible = false;
+
+  isSideBarVisible = true;
 
   constructor(
       private router: Router,
@@ -19,14 +19,8 @@ export class SystemComponent implements OnInit {
   ngOnInit() {
 
   }
-
-  openTaskCreater(){
-    console.log(' this.isCreaterVisible=', this.isCreaterVisible);
-    this.isCreaterVisible = true;
-    console.log(' this.isCreaterVisible=', this.isCreaterVisible);
-  }
-  closeTaskCreater(){
-    this.isCreaterVisible = false;
+  toggleSideBar(){
+    this.isSideBarVisible = !this.isSideBarVisible
   }
 
 

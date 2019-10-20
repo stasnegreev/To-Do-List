@@ -6,6 +6,7 @@ import {UserService} from '../../shared/services/user.service';
 import {User} from '../../shared/module/user.model';
 import {Message} from '../../shared/module/message.model';
 import {AuthService} from '../../shared/services/auth.service';
+import {ActivatedRoute, Router} from "@angular/router";
 
 
 @Component({
@@ -17,11 +18,12 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   message: Message;
-  authService: AuthService;
 
   constructor(
+    private authService: AuthService,
     private usersServise: UserService,
     private title: Title,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -45,13 +47,13 @@ export class LoginComponent implements OnInit {
             this.message.text = '';
             window.localStorage.setItem('user', JSON.stringify(user));
             this.authService.login();
+            this.router.navigate(['home']);
             console.log('has log in');
           } else {
             this.message.showMessage('danger','Password is wrong');
           }
         } else {
           this.message.showMessage('danger','Email does not exist');
-
         }
       });
   }

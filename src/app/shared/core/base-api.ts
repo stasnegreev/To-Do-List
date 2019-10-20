@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 import {User} from '../module/user.model';
@@ -26,5 +26,14 @@ export class BaseApi {
     url = this.getUrl(url);
     return this.http.post(url, data);
   }
-
+  public put(url: string, data: any): Observable<any> {
+    url = this.getUrl(url);
+    return this.http.put(url, data);
+  }
+  public delete(url: string, key: any, data: any): Observable<any> {
+    url = this.getUrl(url);
+    return this.http.delete(url, {
+      params: new HttpParams().set(key, data)
+    });
+  }
 }

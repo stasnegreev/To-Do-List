@@ -1,3 +1,58 @@
+.header{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin: 0 20px 10px 60px;
+  .button{
+    .dropdown-menu{
+      margin-top: 20px;
+    }
+    margin: 15px 5px;
+    padding: 10px;
+    position: relative;
+    img{
+      height: 30px;
+    }
+  }
+  .button_filter {
+    form {
+      padding-left: 15px;
+    }
+  }
+  .button_sorting{
+
+  }
+  .button_add{
+    .btn{
+      width: 80px;
+      padding: 6px;
+      font-size: 12px;
+    }
+  }
+  .button_profile{
+    position: relative;
+    .ava{
+      img{
+        border-radius: 50%;
+        width: 30px;
+      }
+    }
+    .chevron{
+      display: none;
+      position: absolute;
+      top: 20px;
+      left: 48px;
+      img {
+        width: 9px;
+        height: 9px;
+      }
+    }
+    .active{
+      display: block;
+    }
+  }
+}
+
 .home{
   background-color: #f6f7fa;
   padding: 40px;
@@ -34,9 +89,10 @@
         padding: 15px;
         padding-right: 30px;
         display: flex;
+        justify-content: flex-start;
         border: #f6f7fa solid 2px;
         position: relative;
-
+        width: 100%;
         .iteam__icon{
           padding: 15px;
           div{
@@ -48,7 +104,7 @@
             justify-content: center;
 
             span{
-              padding-top: 2px;
+              padding-top: 4px;
               color: white;
               font-size: 26px;
               vertical-align: center;
@@ -56,8 +112,12 @@
           }
         }
         .iteam__content{
+          display: flex;
+          flex-direction: column;
+          width: 100%;
           .iteam__info{
-             display: flex;
+            align-self: flex-end;
+            display: flex;
             justify-content: flex-end;
             .iteam__priority{
               display: flex;
@@ -109,7 +169,19 @@
             img{
               height: 20px;
             }
+
           }
+        }
+      }
+      .action_menu{
+        position: fixed;
+        top:0;
+        left: 50px;
+        width: 50px;
+        display: inherit;
+        flex-direction: column;
+        button{
+          width: 50px;
         }
       }
       .grid_style{
