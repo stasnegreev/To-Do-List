@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AuthService} from "../../shared/services/auth.service";
 import {Router} from "@angular/router";
 import {SettingService} from "../../shared/services/setting.service";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'tdl-settings',
@@ -16,10 +17,11 @@ export class SettingsComponent implements OnInit {
   constructor(private authService: AuthService,
               private router: Router,
               private settingServuce: SettingService,
-
+              private title: Title,
   ) { }
 
   ngOnInit() {
+    this.title.setTitle('Setting');
     this.userName = JSON.parse(window.localStorage.getItem('user')).name;
   }
   onLogOut(){

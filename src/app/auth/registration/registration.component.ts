@@ -25,7 +25,7 @@ export class RegistrationComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.title.setTitle('Регистрация');
+    this.title.setTitle('Registration');
     this.message = new Message('','');
     this.regForm = new FormGroup({
       'email': new FormControl(null, [Validators.required, Validators.email],[this.forbiddenEmails.bind(this)]),

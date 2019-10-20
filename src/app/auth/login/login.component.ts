@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.title.setTitle('Вход в систему');
+    this.title.setTitle('Login');
     this.message = new Message('','');
     this.loginForm = new FormGroup({
       'email': new FormControl(null, [Validators.required, Validators.email]),

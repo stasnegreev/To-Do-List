@@ -5,6 +5,7 @@ import {NgForm} from "@angular/forms";
 import {AuthService} from "../../shared/services/auth.service";
 import {Router} from "@angular/router";
 import {fadeStateTrigger} from "../../shared/animation/fade.animation";
+import {Title} from "@angular/platform-browser";
 declare const $;
 
 @Component({
@@ -38,9 +39,11 @@ export class HomeComponent implements OnInit {
       private taskService: TaskService,
       private authService: AuthService,
       private router: Router,
+      private title: Title,
   ) { }
 
   ngOnInit() {
+    this.title.setTitle('Home');
     this.taskService.getTasks()
       .subscribe((tasks: Task[]) => {
         this.tasks = tasks;
