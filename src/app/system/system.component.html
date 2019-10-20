@@ -1,15 +1,16 @@
 
 <div class="system_window">
-    <div class="sideBar">
+    <div class="sideBar green-them"
+         [ngClass]="{'hide': !isSideBarVisible, 'green-them': isGreenThem}" >
       <aside >
         <div
             class="button button_menu"
             (click)="toggleSideBar()"
         >
-          <div class="chevron active">
+          <div class="chevron" [ngClass]="{'active': isSideBarVisible}">
             <img src="../../assets/images/icons/left-chevron.svg">
           </div>
-          <div class="chevron ">
+          <div class="chevron "[ngClass]="{'active': !isSideBarVisible}">
             <img src="../../assets/images/icons/right-chevron.svg">
           </div>
           <img src="../../assets/images/icons/menu-button.svg">
@@ -40,7 +41,10 @@
     </div>
     <div class="content">
           <section>
-              <router-outlet></router-outlet>
+              <router-outlet
+              (blueThem)="blueThem()"
+              (greenTheme)="greenThem()"
+              ></router-outlet>
           </section>
     </div>
 </div>

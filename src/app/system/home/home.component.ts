@@ -4,21 +4,25 @@ import {TaskService} from "../../shared/services/task.service";
 import {NgForm} from "@angular/forms";
 import {AuthService} from "../../shared/services/auth.service";
 import {Router} from "@angular/router";
+import {fadeStateTrigger} from "../../shared/animation/fade.animation";
+declare const $;
 
 @Component({
   selector: 'tdl-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  animations: [fadeStateTrigger],
 })
 export class HomeComponent implements OnInit {
   editTask: Task;
   isEditorVisible = false;
   isCreaterVisible = false;
   tasks: Task[];
-  duringTasks: Task[];
-  doneTasks: Task[];
+  duringTasks: Task[] = [];
+  doneTasks: Task[] = [];
   viewList: boolean;
-  isFilterVisible = false;
+  isLoaded = false;
+  userName = '';
   prioritys=[
     {type: 'hight', label: 'Hight'},
     {type: 'medium', label: 'Medium'},
@@ -43,16 +47,14 @@ export class HomeComponent implements OnInit {
         this.duringTasks = tasks.filter((item) => item.status === 'during' && this.priorityVisible[item.priority]);
         this.doneTasks = tasks.filter((item) => item.status === 'done' && this.priorityVisible[item.priority]);
       });
-    console.log('this.tasks=', this.tasks);
-
     this.viewList = true;
-    console.log('ngOnInit');
+    setTimeout(() => this.isLoaded = true, 2000)
+    this.userName = JSON.parse(window.localStorage.getItem('user')).name;
   }
   onLogOut(){
     this.authService.logout();
     this.router.navigate(['/login']);
   }
-
 
   filterAdded(form: NgForm){
     console.log(form);
@@ -61,6 +63,7 @@ export class HomeComponent implements OnInit {
     console.log('ngDoCheck');
     this.doneTasks = this.tasks.filter(((item) => item.status === 'done' && this.priorityVisible[item.priority]), this);
         console.log(this.priorityVisible);
+    $('.button_filter .dropdown-toggle').dropdown('hide')
   }
   onViewList(){
     this.viewList = true;

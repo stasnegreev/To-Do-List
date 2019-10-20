@@ -22,6 +22,11 @@ export class CreaterComponent implements OnInit{
     {type: 'medium', label: 'Medium'},
     {type: 'low', label: 'Low'}
   ];
+  colors = [
+    {btn: 'light', label: 'White', color: 'white'},
+    {btn: 'danger', label: 'Red', color: '#FFE8DC'},
+    {btn: 'success', label: 'Green', color: '#ADE7D4'}
+  ];
 
 
   ngOnInit() {
@@ -41,8 +46,8 @@ export class CreaterComponent implements OnInit{
       return;
     };
     console.log("form submit");
-    let {name, description, priority} = form.value;
-    const task = new Task(name, description, priority, "during", new Date());
+    let {name, description, priority, color} = form.value;
+    const task = new Task(name, description, priority, "during", new Date(), color);
     this.taskService.addTask(task)
         .subscribe( (t) => {
           this.onTaskAdd.emit(t);

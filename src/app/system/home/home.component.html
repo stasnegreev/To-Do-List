@@ -23,11 +23,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button
-                                data-toggle="dropdown"
-                            class="btn btn-primary"
-                            type="submit"
-                        >
+                        <button class="btn btn-primary"
+                                type="submit">
                             Filter
                         </button>
                     </div>
@@ -36,10 +33,10 @@
         </div>
         <div class="button button_sorting">
             <div class="dropdown">
-                <div class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="dropdown-toggle" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img src="../../assets/images/icons/sorting-button.svg">
                 </div>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton3">
                     <span class="dropdown-item" (click)="onSortDown()">From new to old</span>
                     <span class="dropdown-item" (click)="onSortUp()">From old to new</span>
                 </div>
@@ -50,23 +47,25 @@
                 + Add ToDo
             </div>
         </div>
-        <div class="button button_profile">
+        <div class="button_profile">
             <div class="dropdown">
-                <div class="dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="button dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="ava">
                         <img src="https://img.freepik.com/free-photo/_53876-40306.jpg?size=626&ext=jpg">
                     </div>
+                    <div class="chevron active">
+                        <img src="../../assets/images/icons/down-chevron.svg">
+                    </div>
+                    <div class="chevron" aria-labelledby="dropdownMenuButton2">
+                        <img src="../../assets/images/icons/up-chevron.svg">
+                    </div>
                 </div>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton2">
-                    <div class="dropdown-item" (click)="onLogOut()">Log out</div>
+
+                    <div class="dropdown-item" (click)="onLogOut()">Log out {{userName}}</div>
                 </div>
             </div>
-            <div class="chevron active">
-                <img src="../../assets/images/icons/down-chevron.svg">
-            </div>
-            <div class="chevron" aria-labelledby="dropdownMenuButton2">
-                <img src="../../assets/images/icons/up-chevron.svg">
-            </div>
+
         </div>
     </div>
 </header>
@@ -88,8 +87,14 @@
             (onTaskDuring)="onTaskDuring($event)"
     ></tdl-editor>
 </aside>
-
-<div class="home">
+<div *ngIf="!isLoaded"
+     class="loader">
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<div *ngIf="isLoaded"
+      class="home">
     <div class="view">
         <div
             class="view_icon"
@@ -109,7 +114,7 @@
     </div>
     <div class="toDo">
         <h2>
-            To Do <span>()</span>
+            To Do <span>({{duringTasks.length}})</span>
         </h2>
         <ul
             class="list"
@@ -118,14 +123,15 @@
                 class="iteam"
                 [ngClass]="{'grid_style': !viewList}"
                 *ngFor="let t of duringTasks"
+                [ngStyle]="{'background-color': t.color}"
             >
 
                 <div class="iteam__icon">
                     <div>
-                        <span>{{t.name[1].toUpperCase()}}</span>
+                        <span>{{t.name[0].toUpperCase()}}</span>
                     </div>
                 </div>
-                <div class="iteam__content">
+                <div [ngStyle]="{'background-color': t.color}" class="iteam__content">
                     <div class="iteam__info">
                         <div
                                 class="iteam__priority"
@@ -175,7 +181,7 @@
     </div>
     <div class="toDo">
         <h2>
-            Completed <span>()</span>
+            Completed <span>({{doneTasks.length}})</span>
         </h2>
         <ul
             class="list"
@@ -184,7 +190,8 @@
                     class="iteam"
                     [ngClass]="{'grid_style': !viewList}"
                     *ngFor="let t of doneTasks"
-
+                    [ngStyle]="{'background-color': t.color}"
+                    [@fade]= "true"
             >
 
                 <div class="iteam__icon">

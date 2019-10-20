@@ -1,1 +1,53 @@
-<p>settings works!</p>
+<header>
+    <div class="header">
+
+        <div class="button button_profile">
+            <div class="dropdown">
+                <div class="dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="ava">
+                        <img src="https://img.freepik.com/free-photo/_53876-40306.jpg?size=626&ext=jpg">
+                    </div>
+                </div>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton2">
+                    <div class="dropdown-item" (click)="onLogOut()">Log out {{userName}}</div>
+                </div>
+            </div>
+            <div class="chevron active">
+                <img src="../../assets/images/icons/down-chevron.svg">
+            </div>
+            <div class="chevron" aria-labelledby="dropdownMenuButton2">
+                <img src="../../assets/images/icons/up-chevron.svg">
+            </div>
+        </div>
+    </div>
+</header>
+<div class="home">
+    <div class="toDo">
+        <h2>
+            Setting
+        </h2>
+
+        <ul class="setting_list">
+            <li class="setting_item">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Blue theme</h5>
+                        <div class="bloc blue"></div>
+                        <div class="btn  btn-primary"
+                            (click)="onBlueTheme()">Blue theme</div>
+                    </div>
+                </div>
+            </li>
+            <li class="setting_item">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Green theme</h5>
+                        <div class="bloc green"></div>
+                        <div class="btn  btn-primary"
+                             (click)="onGreenTheme()">Green theme</div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

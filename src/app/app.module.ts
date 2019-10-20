@@ -9,6 +9,7 @@ import {TaskService} from "./shared/services/task.service";
 import {HttpClientModule} from "@angular/common/http";
 import {AuthGuard} from "./shared/services/auth.guard";
 import {AuthService} from "./shared/services/auth.service";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {AuthService} from "./shared/services/auth.service";
     AppRoutingModule,
     AuthModule,
     SystemModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     TaskService,

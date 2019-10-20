@@ -30,13 +30,19 @@ export class EditorComponent implements OnInit {
     {type: 'medium', label: 'Medium'},
     {type: 'low', label: 'Low'}
   ];
+  colors = [
+    {btn: 'light', label: 'White', color: 'white'},
+    {btn: 'danger', label: 'Red', color: '#FFE8DC'},
+    {btn: 'success', label: 'Green', color: '#ADE7D4'}
+  ];
 
   ngOnInit() {
       this.massage = new Message('success', '');
     this.editForm = {
       name: this.editTask.name,
       description: this.editTask.description,
-      priority: this.editTask.priority
+      priority: this.editTask.priority,
+      color: this.editTask.color
     };
   }
 
@@ -48,7 +54,7 @@ export class EditorComponent implements OnInit {
   this.editTask.name = form.value.name;
   this.editTask.description = form.value.description;
   this.editTask.priority = form.value.priority;
-
+  this.editTask.color = form.value.color;
   this.taskService.editTask( this.editTask)
       .subscribe( () => {
         this.onTaskEdit.emit(this.editTask);

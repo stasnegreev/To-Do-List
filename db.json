@@ -4,39 +4,7 @@
       "id": 1,
       "email": "wfm@mail.ru",
       "password": "12345678",
-      "name": "Администратор"
-    },
-    {
-      "email": "q@w.e",
-      "password": "qwqwqw",
-      "name": "qwqwqw",
-      "id": 2
-    },
-    {
-      "email": "q@w.efgrh5",
-      "password": "qwqwqw554",
-      "name": "qwqwqw112",
-      "id": 3
-    },
-    {
-      "email": "q443@w.e",
-      "password": "qwqwqw423",
-      "name": "qwqwqwqq",
-      "id": 4
-    }
-  ],
-  "bill": {
-    "value": 26205,
-    "currency": "RUB"
-  },
-  "currencyEx": [
-    {
-      "base": "RUB",
-      "date": "18/10/2019",
-      "rates": {
-        "USD": 0.5,
-        "EUR": 0.4
-      }
+      "name": "Admin"
     }
   ],
   "tasks": [
@@ -46,79 +14,26 @@
       "priority": "medium",
       "status": "during",
       "data": "2019-10-18T09:11:35.663Z",
+      "color": "white",
       "id": 2
     },
     {
       "name": "Lern Angular",
-      "description": null,
+      "description": "dafesgrthsryjudrhtfasd\nfgfdhjhdhsgfsghsgjhg",
       "priority": "hight",
-      "status": "done",
+      "status": "during",
       "data": "2019-10-18T15:29:21.861Z",
+      "color": "#ADE7D4",
       "id": 14
     },
     {
-      "name": "sdafh",
-      "description": null,
-      "priority": null,
-      "status": "during",
-      "data": "2019-10-19T12:41:05.154Z",
-      "id": 18
-    },
-    {
-      "name": "sdafsfb",
-      "description": null,
-      "priority": null,
-      "status": "during",
-      "data": "2019-10-19T13:22:32.034Z",
-      "id": 20
-    },
-    {
-      "name": "do home work",
-      "description": "exe 134 exe 234",
+      "name": "do homework",
+      "description": "last week",
       "priority": "hight",
       "status": "done",
-      "data": "2019-10-19T13:25:06.577Z",
-      "id": 22
-    },
-    {
-      "name": "take yor time",
-      "description": "lorem*15asfgshgdshdfggdshg  ",
-      "priority": "low",
-      "status": "during",
-      "data": "2019-10-19T13:31:48.152Z",
-      "id": 23
-    },
-    {
-      "name": "Дом2",
-      "description": null,
-      "priority": "hight",
-      "status": "during",
-      "data": "2019-10-19T22:56:46.178Z",
-      "id": 24
-    },
-    {
-      "name": "1adgfbngfhad",
-      "description": null,
-      "priority": "hight",
-      "status": "done",
-      "data": "2019-10-19T23:01:42.693Z",
-      "id": 25
-    },
-    {
-      "name": "аыфвапафвп",
-      "description": null,
-      "priority": "medium",
-      "status": "during",
-      "data": "2019-10-19T23:01:50.052Z",
-      "id": 26
-    },
-    {
-      "name": "ваымыа",
-      "description": null,
-      "priority": "medium",
-      "status": "during",
-      "data": "2019-10-19T23:02:33.821Z",
-      "id": 27
+      "data": "2019-10-20T15:23:30.921Z",
+      "color": "#FFE8DC",
+      "id": 15
     }
   ]
 }

@@ -9,6 +9,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { CreaterComponent } from './home/creater/creater.component';
 import {TaskService} from "../shared/services/task.service";
 import { EditorComponent } from './home/editor/editor.component';
+import {SettingService} from "../shared/services/setting.service";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EditorComponent } from './home/editor/editor.component';
     SharedModule,
   ],
   providers: [
-    TaskService
+    TaskService,
+    SettingService
   ]
 })
 export class SystemModule { }

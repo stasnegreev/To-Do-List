@@ -7,7 +7,7 @@ import {SettingsComponent} from "./settings/settings.component";
 import {AuthGuard} from "../shared/services/auth.guard";
 
 const routes: Routes = [
-  {path: '', component: SystemComponent/*,canActivate: [AuthGuard]*/, children: [
+  {path: '', component: SystemComponent, /*canActivate: [AuthGuard], */children: [
       {path: 'home', component: HomeComponent},
       {path: 'setting', component: SettingsComponent}
     ]}

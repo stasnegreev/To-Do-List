@@ -8,7 +8,7 @@
   background-color: white;
 
   margin: 10% auto 0 auto;
-  width:450px;
+  max-width:450px;
   min-height:330px;
   padding: 15px;
   header {
@@ -16,8 +16,11 @@
     align-items: center;
     color: #9ba8b5;
     .logo {
-      img {
-        height: 60px;
+      .side__logo {
+        border: solid 10px #0e1a35;
+        border-radius: 50%;
+        height: 40px;
+        width: 40px;
       }
     }
     h1 {

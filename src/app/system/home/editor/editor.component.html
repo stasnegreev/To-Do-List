@@ -43,7 +43,8 @@
                          [ngClass]="{'has-error': description.invalid && description.touched}"
                     >
                         <label class="control-label" for="description">Add description</label>
-                        <input
+
+                        <textarea
                                 type="text"
                                 id="description"
                                 class="form-control"
@@ -51,43 +52,55 @@
                                 [ngModel]="editForm.description"
                                 #description="ngModel"
                                 maxlength="225"
-                        >
+                        ></textarea>
+
                     </div>
                     <div class="form-group">
                         <label class="control-label">Select priority</label>
-                        <div *ngFor="let t of types">
-                            <label>
-                                <input
-                                        class="radio"
-                                        name="priority"
-                                        type="radio"
-                                        [value]="t.type"
-                                        [ngModel]="editForm.priority"
-                                >
-                                <span>{{t.label}}</span>
-                            </label>
-                        </div>
+                            <div class="btn__grup">
+                                <label *ngFor="let t of types" class="select">
+                                    <input
+                                            class="radio"
+                                            name="priority"
+                                            type="radio"
+                                            [value]="t.type"
+                                            [ngModel]="editForm.priority"
+                                    >
+                                    <span>{{t.label}}</span>
+                                </label>
+                            </div>
                     </div>
-                    <div class="modal-footer">
+                    <div class="form-group">
+                        <label class="control-label">Select color</label>
+                            <div class="btn__grup">
+                                <label *ngFor="let c of colors"
+                                        class="btn btn-{{c.btn}} select">
+                                    <input
+                                            class="radio"
+                                            name="color"
+                                            type="radio"
+                                            [value]="c.color"
+                                            [ngModel]="editForm.color"
+                                            required
+                                    >
+                                    <span>{{c.label}}</span>
+                                </label>
+                            </div>
+                    </div>
+                    <div class="modal-footer ">
                         <button *ngIf="editTask.status === 'during'" type="button" class="btn btn-success" (click)="doneTask()">
                             Done
                         </button>
                         <button *ngIf="editTask.status === 'done'" type="button" class="btn btn-primary" (click)="duringTask()">
                             Not done
                         </button>
-                        <button type="button" class="btn btn-dark" type="submit" (click)="doneTask()">
+                        <button type="button" class="btn btn-dark" type="submit">
                             Edit
                         </button>
                         <button type="button" class="btn btn-danger" (click)="removeTask()">
                             Remove
                         </button>
-                        <button
-                                type="button"
-                                class="btn btn-secondary"
-                                (click)="closeEditor()"
-                        >
-                            Cancel
-                        </button>
+
                     </div>
                 </form>
             </div>

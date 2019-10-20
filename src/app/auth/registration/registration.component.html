@@ -49,32 +49,14 @@
         formControlName="name"
         [ngClass]="{'is-invalid' : regForm.get('name').invalid && regForm.get('name').touched}"
         id="name"
-        placeholder="Введите ФИО в формате 'Фамилия И. О.'"
+        placeholder="Введите ФИО в формате 'Фамилия'"
       >
       <span
         class="invalid-feedback"
         *ngIf="regForm.get('name').invalid && regForm.get('name').touched"
       >
-        <span *ngIf="regForm.get('name').errors.pattern">ФИО должно быть в формате "Фамилия И. О."</span>
+        <span *ngIf="regForm.get('name').errors.pattern">ФИО должно быть в формате "Фамилия"</span>
         <span *ngIf="regForm.get('name').errors.required">ФИО обязательно</span>
-      </span>
-    </div>
-    <div class="form-group has-success">
-      <label for="license">Номер ВУ</label>
-      <input
-        type="text"
-        class="form-control underlined"
-        formControlName="license"
-        [ngClass]="{'is-invalid' : regForm.get('license').invalid && regForm.get('license').touched}"
-        id="license"
-        placeholder="Введите номер ВУ в формате '1AA123456'"
-      >
-      <span
-        class="invalid-feedback"
-        *ngIf="regForm.get('license').invalid && regForm.get('license').touched"
-      >
-        <span *ngIf="regForm.get('license').errors.pattern">Номер должно быть в формате "1AA123456"</span>
-        <span *ngIf="regForm.get('license').errors.required">Номер ВУ обязательно</span>
       </span>
     </div>
     <div class="form-group">

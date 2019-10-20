@@ -1,0 +1,96 @@
+.header{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0 20px 0px 60px;
+  background-color: #fff;
+  .button{
+    .dropdown-menu{
+      margin-top: 20px;
+    }
+    margin: 15px 5px;
+    padding: 10px;
+    position: relative;
+    img{
+      height: 30px;
+    }
+  }
+  .button_profile{
+    position: relative;
+    .ava{
+      img{
+        border-radius: 50%;
+        width: 30px;
+      }
+    }
+    .chevron{
+      display: none;
+      position: absolute;
+      top: 20px;
+      left: 48px;
+      img {
+        width: 9px;
+        height: 9px;
+      }
+    }
+    .active{
+      display: block;
+    }
+  }
+}
+.home{
+  background-color: #f6f7fa;
+  padding: 20px;
+  position: relative;
+  .view{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    .view_icon{
+      img{
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  .toDo {
+    h2 {
+      display: inline-block;
+      margin-top: 10px;
+      color: #000000;
+    }
+    .setting_list{
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      .setting_item{
+        .card{
+          .card-body{
+            display: flex;
+            flex-direction: column;
+            .card-title{
+              font-size: 24px;
+            }
+            .bloc{
+              max-height: 100px;
+              margin: 20px;
+
+            }
+            .green{
+              background-color: #013220;
+            }
+            .blue{
+              background-color: #0e1a35;
+            }
+            .btn-block{
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

@@ -30,19 +30,18 @@ export class RegistrationComponent implements OnInit {
     this.regForm = new FormGroup({
       'email': new FormControl(null, [Validators.required, Validators.email],[this.forbiddenEmails.bind(this)]),
       'password': new FormControl(null, [Validators.required, Validators.minLength(6)]),
-      'name': new FormControl(null, [Validators.required, Validators.pattern(/^[А-Я]{1}[а-я]{1,20} [А-Я]{1}[.]{1} [А-Я]{1}[.]{1}$/)]),
-      'license': new FormControl(null, [Validators.required, Validators.pattern(/^[0-9]{1}[A-Za-z]{2}[0-9]{6}$/)]),
+      'name': new FormControl(null, [Validators.required, Validators.pattern(/^[А-Я]{1}[а-я]{1,20}$/)]),
     });
   }
 
   onSubmit() {
     console.log('this.regForm.value=', this.regForm.value);
-    const {email, password, name, license} = this.regForm.value;
-    const user = new User(email, password, name, license);
+    const {email, password, name} = this.regForm.value;
+    const user = new User(email, password, name);
     this.userService.createNewUser(user)
       .subscribe(() => {
         console.log('added');
-        //this.router.navigate(['/login']);
+        this.router.navigate(['/login']);
     });
   }
   forbiddenEmails(control: FormControl): Promise<any> {

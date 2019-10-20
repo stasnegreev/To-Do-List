@@ -40,7 +40,7 @@
                          [ngClass]="{'has-error': description.invalid && description.touched}"
                     >
                         <label class="control-label" for="description">Add description</label>
-                        <input
+                        <textarea
                             type="text"
                             id="description"
                             class="form-control"
@@ -48,32 +48,45 @@
                             [ngModel]=""
                             #description="ngModel"
                             maxlength="225"
-                        >
+                        ></textarea>
                     </div>
                     <div class="form-group">
                         <label class="control-label">Select priority</label>
-                        <div *ngFor="let t of types">
-                            <label>
+                        <div class="btn__grup">
+                            <label *ngFor="let t of types" class="select">
                                 <input
-                                    class="radio"
-                                    name="priority"
-                                    type="radio"
-                                    [value]="t.type"
-                                    [ngModel]=""
-                                    required
+                                        class="radio "
+                                        name="priority"
+                                        type="radio"
+                                        [value]="t.type"
+                                        [ngModel]=""
+                                        required
                                 >
                                 <span>{{t.label}}</span>
                             </label>
-
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="control-label">Select color</label>
+                            <div class="btn__grup">
+                                <label  *ngFor="let c of colors"
+                                        class="btn btn-{{c.btn}} select">
+                                    <input
+                                            class="radio"
+                                            name="color"
+                                            type="radio"
+                                            [value]="c.color"
+                                            [ngModel]=""
+                                            required
+                                    >
+                                    <span>{{c.label}}</span>
+                                </label>
+                            </div>
+
+
+                    </div>
                     <div class="modal-footer">
-                        <button
-                                type="button"
-                                class="btn btn-secondary"
-                        >
-                            Cancel
-                        </button>
+
                         <button
                                 class="btn btn-primary"
                                 type="submit"

@@ -5,6 +5,7 @@ export class Task {
         public priority: string,
         public status: string,
         public  data: any,
+        public color: string,
         public  id?: number,
     ){}
 }

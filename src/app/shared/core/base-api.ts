@@ -18,6 +18,7 @@ export class BaseApi {
   }
 
   public get(url: string): Observable<any> {
+
     url = this.getUrl(url);
     console.log('url=', url);
     return this.http.get(url);
