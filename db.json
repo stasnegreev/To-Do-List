@@ -5,6 +5,11 @@
       "email": "wfm@mail.ru",
       "password": "12345678",
       "name": "Admin"
+    },
+    {
+      "email": "qwerty@qwerty.ru",
+      "password": "qwerty",
+      "id": "Фио"
     }
   ],
   "tasks": [
